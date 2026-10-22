@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweden Fulfillment Control Tower — Netcompany PULSE × ORTEC × Optrack</title>
+<meta name="description" content="Netcompany PULSE + ORTEC/Optrack integration for Swedish last-mile excellence. Interactive MVP prototype — IT Consultant Challenge 2026, Round 1.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%BC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#/">
+      <span class="brand-mark">&#128228;</span>
+      <span class="brand-txt">SE <b>Control Tower</b></span>
+    </a>
+    <div class="nav-links">
+      <a href="#challenge">Challenge</a>
+      <a href="#solution">Solution</a>
+      <a href="#mvp">MVP</a>
+      <a href="#ai">AI value</a>
+      <a href="#impact">Impact</a>
+      <a href="#scale">Scale</a>
+    </div>
+    <div class="nav-cta">
+      <select id="lang-sel" class="lang-sel" title="Language / Ngôn ngữ / Språk">
+        <option value="en">English</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="sv">Svenska</option>
+        <option value="da">Dansk</option>
+        <option value="no">Norsk</option>
+      </select>
+      <a class="btn btn-ghost btn-sm" href="#/track" id="nav-portal-btn">Customer portal</a>
+      <a class="btn btn-primary btn-sm" href="#/tower" id="nav-demo-btn">&#9654; Live demo</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ================= HOME / PITCH ================= -->
+<section id="view-home" class="view">
+
+  <header class="hero wrap">
+    <div class="hero-copy">
+      <div class="kicker-line">
+        <span class="kicker">IT CONSULTANT CHALLENGE 2026 · ROUND 1</span>
+        <span class="team-tag" id="team-name">Team TQT</span>
+      </div>
+      <h1>Sweden Fulfillment<br><span class="grad">Control Tower</span></h1>
+      <p class="lead">One screen for every Swedish delivery. <b>Netcompany PULSE</b> orchestrates the
+        data. <b>ORTEC</b> predicts and optimises. <b>Optrack</b> executes and tracks.
+        No rip-and-replace — we layer on top of what Company A already runs.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#/tower">&#9654;&nbsp; Open the live demo</a>
+        <a class="btn btn-ghost" href="#solution">Explore the solution</a>
+      </div>
+      <ul class="hero-stats">
+        <li><b>8–12</b><span>weeks to pilot</span></li>
+        <li><b>3</b><span>features shipped</span></li>
+        <li><b>3</b><span>metro pilot</span></li>
+        <li><b>0</b><span>systems replaced</span></li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <div class="panel map-card">
+        <div id="hero-map" class="hero-map-holder"></div>
+        <div class="map-caption">Pilot network · <b>Stockholm · Göteborg · Malmö</b> · B2C home delivery</div>
+      </div>
+      <div class="hero-chips">
+        <span class="chip chip-green">&#9679; ETA accuracy 93%</span>
+        <span class="chip chip-amber">&#9679; 6 orders at risk right now</span>
+        <span class="chip chip-blue">&#9679; 1 screen — not 5 systems</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CHALLENGE / PRIORITISATION ============ -->
+  <section class="section wrap" id="challenge">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">01 · THE CHALLENGE</span>
+      <h2>One business. Three markets. Different priorities.</h2>
+      <p class="sec-lead">Company A — a leading Danish construction retailer with hundreds of stores
+        across Denmark, Norway and Sweden — has grown into fragmented systems and manual processes.
+        The board wants one digital solution, but the most critical challenge differs by market.</p>
+    </div>
+
+    <div class="cards4 reveal">
+      <div class="card"><div class="card-ico">&#129524;</div><h4>Fragmented systems</h4><p>Country-by-country systems. Improvements that work in one market can't scale to the next.</p></div>
+      <div class="card"><div class="card-ico">&#9995;</div><h4>Manual processes</h4><p>Orders and re-bookings handled by phone and email. High effort, high error rate.</p></div>
+      <div class="card"><div class="card-ico">&#127979;</div><h4>Inconsistent operations</h4><p>Different ways of working between countries — and between stores.</p></div>
+      <div class="card card-hot"><div class="card-ico">&#128666;</div><h4>Delivery &amp; fulfilment</h4><p>Late or failed deliveries. No visibility for customers or dispatchers.</p></div>
+    </div>
+
+    <div class="market-row reveal">
+      <div class="market">
+        <div class="m-flag">&#127965;</div>
+        <h5>Denmark</h5>
+        <div class="m-challenge">Manual processes</div>
+        <p>Greatest employee effort — but B2C delivery is less critical and the flows are smaller.</p>
+        <span class="m-tag">Phase 4 priority</span>
+      </div>
+      <div class="market">
+        <div class="m-flag">&#127471;&#127479;</div>
+        <h5>Norway</h5>
+        <div class="m-challenge">Store operations</div>
+        <p>Inconsistent store experience hurts customers daily — a change-management-heavy programme.</p>
+        <span class="m-tag">Phase 3 priority</span>
+      </div>
+      <div class="market chosen">
+        <div class="chosen-tag">OUR MVP FOCUS</div>
+        <div class="m-flag">&#127480;&#127466;</div>
+        <h5>Sweden</h5>
+        <div class="m-challenge">Delivery &amp; fulfilment</div>
+        <p>Highest cost of failure: re-deliveries, WISMO calls and churn in a competitive market —
+          and the fastest measurable win.</p>
+        <ul class="m-why">
+          <li>~12% of B2C orders miss the promised window <i>(assumption — validated week 1)</i></li>
+          <li>Every failed delivery ≈ 200 kr direct + CSAT damage</li>
+          <li>Measurable in weeks — no store process change needed</li>
+          <li>Pulse groundwork for the Nordic rollout</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="persona-strip reveal">
+      <div class="persona"><span class="p-ico">&#128100;</span><b>Sofia, Nacka</b><i>B2C customer</i><span>“No idea when the cement arrives. I wait at home, then I call support.”</span></div>
+      <div class="persona"><span class="p-ico">&#128421;</span><b>Anna, Jordbro DC</b><i>Dispatcher</i><span>“Five systems, no single view. I learn about delays from angry customers.”</span></div>
+      <div class="persona"><span class="p-ico">&#127978;</span><b>Erik, Jordbro</b><i>Store &amp; DC staff</i><span>“Re-booking calls interrupt my picking work all day long.”</span></div>
+      <div class="persona"><span class="p-ico">&#128188;</span><b>Mette, Copenhagen</b><i>CFO</i><span>“Re-delivery costs and churn are invisible — we have no data to act on.”</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION / ARCHITECTURE ============ -->
+  <section class="section wrap" id="solution">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">02 · THE SOLUTION</span>
+      <h2>Three proven layers. Zero rip-and-replace.</h2>
+      <p class="sec-lead">A fulfillment control tower for Sweden: PULSE breaks the data silos,
+        ORTEC turns data into decisions, Optrack turns decisions into executed routes.</p>
+    </div>
+
+    <div class="arch reveal">
+      <div class="arch-col">
+        <div class="arch-title">Connect</div>
+        <div class="arch-sub">existing systems, untouched</div>
+        <div class="arch-item">ERP</div>
+        <div class="arch-item">WMS</div>
+        <div class="arch-item">POS &amp; eCom</div>
+        <div class="arch-item">Carrier APIs</div>
+      </div>
+      <div class="arch-arrow">&#8594;</div>
+      <div class="arch-col arch-core">
+        <div class="layer-badge lb-pulse">PULSE</div>
+        <div class="arch-title">Orchestrate</div>
+        <div class="arch-sub">Netcompany real-time event bus</div>
+        <div class="arch-item">Connects — never ingests or rewrites master data</div>
+        <div class="arch-item">Single control-tower view of every order</div>
+        <div class="arch-item">Proven: Go-Ahead Norway, DSB</div>
+      </div>
+      <div class="arch-arrow">&#8594;</div>
+      <div class="arch-col">
+        <div class="layer-badge lb-ortec">ORTEC</div>
+        <div class="layer-badge lb-optrack">OPTRACK</div>
+        <div class="arch-title">Optimise</div>
+        <div class="arch-sub">decisions &amp; execution</div>
+        <div class="arch-item">ORTEC · ETA forecasting, exception scoring, slot &amp; route optimisation</div>
+        <div class="arch-item">Optrack · vehicle routing, load optimisation, fleet tracking</div>
+        <div class="arch-item">Optional: use carrier tracking APIs if fleet is fully outsourced</div>
+      </div>
+      <div class="arch-arrow">&#8594;</div>
+      <div class="arch-col">
+        <div class="arch-title">Engage</div>
+        <div class="arch-sub">two users, one truth</div>
+        <div class="arch-item">Dispatcher control tower</div>
+        <div class="arch-item">Customer portal (SMS link)</div>
+        <div class="arch-item">One-click interventions</div>
+      </div>
+    </div>
+
+    <div class="layer-cards reveal">
+      <div class="layer-card">
+        <div class="layer-badge lb-pulse">NETCOMPANY PULSE</div>
+        <h4>The brain</h4>
+        <ul>
+          <li>Sits <b>on top</b> of existing ERP / WMS / POS / carrier APIs</li>
+          <li>No master-data migration — no rip-and-replace</li>
+          <li>Battle-tested orchestration (Go-Ahead Norway, DSB)</li>
+        </ul>
+        <p class="why-note"><b>Why it matters:</b> Company A cannot rebuild its landscape in 8–12 weeks. PULSE layers on top.</p>
+      </div>
+      <div class="layer-card">
+        <div class="layer-badge lb-ortec">ORTEC</div>
+        <h4>The decision layer</h4>
+        <ul>
+          <li>AI ETA from delivery history, terrain, season &amp; live traffic</li>
+          <li>Exception scoring — which orders need action <i>now</i></li>
+          <li><b>+20–30%</b> bookable delivery slots without cost increase</li>
+        </ul>
+        <p class="why-note"><b>Evidence:</b> proven at European retailers — more slots, fewer miles.</p>
+      </div>
+      <div class="layer-card">
+        <div class="layer-badge lb-optrack">OPTRACK</div>
+        <h4>The execution layer</h4>
+        <ul>
+          <li>Vehicle routing, real-time fleet tracking</li>
+          <li>Load optimisation — fewer trips, same promise</li>
+          <li><b>−6%</b> trips (Brakes Group) · <b>−15%</b> fleet miles</li>
+        </ul>
+        <p class="why-note"><b>Scope note:</b> swap for carrier tracking APIs if Company A fully outsources the fleet.</p>
+      </div>
+    </div>
+
+    <div class="callout reveal">&#128161; <b>Design principle:</b> we integrate what exists — we don't replace it. That is what makes an 8–12 week MVP realistic.</div>
+  </section>
+
+  <!-- ============ MVP SCOPE ============ -->
+  <section class="section wrap" id="mvp">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">03 · THE MVP</span>
+      <h2>Eight to twelve weeks. One flow. Three features.</h2>
+      <p class="sec-lead">Sweden only · Stockholm + Göteborg + Malmö · B2C home delivery — the flow where
+        customer experience is most sensitive and re-delivery cost is highest.</p>
+    </div>
+
+    <div class="mvp-grid reveal">
+      <div class="in-card">
+        <div class="io-head">&#9989; WHAT WE BUILD</div>
+        <div class="feat"><span class="f-num">1</span><div><b>Risk Dashboard</b><p>Every order whose ETA is slipping, on one screen — ranked, live, replacing 5 systems.</p></div></div>
+        <div class="feat"><span class="f-num">2</span><div><b>AI-recommended actions</b><p>Per order: 2–3 interventions with success probability and cost impact. One click to execute.</p></div></div>
+        <div class="feat"><span class="f-num">3</span><div><b>Customer portal</b><p>No app. An SMS link: live status, ETA and self-service re-booking in 10 seconds.</p></div></div>
+      </div>
+      <div class="out-card">
+        <div class="io-head io-out">&#10060; WHAT WE DELIBERATELY DON'T DO</div>
+        <ul>
+          <li><b>Denmark &amp; Norway</b> — later phases on the same core, new modules.</li>
+          <li><b>No ERP or POS rebuild</b> — read-only integration via PULSE.</li>
+          <li><b>No full-chain AI</b> — one flow done well beats five flows done badly.</li>
+          <li><b>No store operations changes</b> — that is Norway's priority, not Sweden's.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl reveal">
+      <div class="tl-cap">DELIVERY PLAN — WEEKS 1–12</div>
+      <div class="tl-row">
+        <div class="phase"><span class="ph-w">W1–2</span><b>Connect</b><p>PULSE connectors: ERP, WMS, carrier APIs (read-only)</p></div>
+        <div class="phase"><span class="ph-w">W3–4</span><b>Predict</b><p>ORTEC ETA model trained on 12 months of delivery history</p></div>
+        <div class="phase"><span class="ph-w">W5–6</span><b>Build</b><p>Risk dashboard + customer portal (this prototype)</p></div>
+        <div class="phase"><span class="ph-w">W7–8</span><b>Pilot</b><p>Stockholm: 5 dispatchers, 2 DCs, live KPIs</p></div>
+        <div class="phase"><span class="ph-w">W9–11</span><b>Scale up</b><p>Göteborg + Malmö added to the pilot</p></div>
+        <div class="phase"><span class="ph-w">W12</span><b>Decide</b><p>Impact review → national rollout business case</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI VALUE ============ -->
+  <section class="section wrap" id="ai">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">04 · WHERE AI CREATES VALUE</span>
+      <h2>Not AI for its own sake — four places it pays for itself.</h2>
+    </div>
+    <div class="ai-grid reveal">
+      <div class="ai-card"><div class="card-ico">&#9888;</div><h4>Exception detection</h4>
+        <p>Every live order scored continuously. The three that need action now — surfaced before the customer notices.</p>
+        <span class="stat-chip sc-red">target −40% late deliveries</span></div>
+      <div class="ai-card"><div class="card-ico">&#128336;</div><h4>ETA forecasting</h4>
+        <p>History + terrain + season + live traffic. Within-window accuracy of ~93% in the pilot metros.</p>
+        <span class="stat-chip sc-blue">MAE ~6.4 min</span></div>
+      <div class="ai-card"><div class="card-ico">&#128200;</div><h4>Demand forecasting</h4>
+        <p>Pre-position stock at DCs: insulation before the winter wave, timber for summer builds.</p>
+        <span class="stat-chip sc-green">+9% insulation demand next 7d</span></div>
+      <div class="ai-card"><div class="card-ico">&#128230;</div><h4>Load optimisation</h4>
+        <p>Optrack fill and stop consolidation — fewer trips per route, same promise to customers.</p>
+        <span class="stat-chip sc-amber">−6% trips (Brakes evidence)</span></div>
+    </div>
+  </section>
+
+  <!-- ============ BUSINESS IMPACT ============ -->
+  <section class="section wrap" id="impact">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">05 · BUSINESS IMPACT</span>
+      <h2>Measurable value, stated assumptions.</h2>
+    </div>
+    <div class="impact-stats reveal">
+      <div class="istat"><b><span data-count="40" data-prefix="−">0</span>%</b><span>fewer late deliveries<br><i>pilot target vs today</i></span></div>
+      <div class="istat"><b>+20–30%</b><span>bookable delivery slots<br><i>ORTEC · European retailers</i></span></div>
+      <div class="istat"><b><span data-count="15" data-prefix="−">0</span>%</b><span>fleet miles<br><i>Optrack case evidence</i></span></div>
+      <div class="istat"><b>12 mo</b><span>payback estimate<br><i>DeeBee-style ROI</i></span></div>
+    </div>
+    <div class="assump reveal">
+      <b>Stated assumptions (per the brief)</b> — ≈300 B2C orders/day across the 3 pilot metros · ~12% miss the
+      window today · ≈200 kr per failed attempt → <b>≈1.3 MSEK/year avoided in the pilots alone</b> — before CSAT,
+      WISMO-call deflection and dispatcher time. Validated in week 1 of delivery.
+      Every number above is visible live in the demo.
+    </div>
+  </section>
+
+  <!-- ============ SCALE PATH ============ -->
+  <section class="section wrap" id="scale">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">06 · SCALE</span>
+      <h2>Start small. Think big.</h2>
+      <p class="sec-lead">One strategic solution — never one identical implementation. The PULSE core stays;
+        each market adds the module that solves <i>its</i> most critical challenge.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><span class="step-dot">1</span><div><b>Sweden — MVP · weeks 0–12</b><p>Stockholm · Göteborg · Malmö. B2C home delivery on the tower.</p></div></div>
+      <div class="step"><span class="step-dot">2</span><div><b>Sweden — national</b><p>All Swedish metros + B2B site deliveries on the same tower.</p></div></div>
+      <div class="step"><span class="step-dot">3</span><div><b>Norway</b><p>Add the store-operations module — consistent store workflows.</p></div></div>
+      <div class="step"><span class="step-dot">4</span><div><b>Denmark</b><p>Add manual-process automation — order &amp; re-booking flows.</p></div></div>
+    </div>
+    <div class="callout reveal">&#127919; Same core, new modules per market — <b>no rebuild at any phase</b>. That is the PULSE promise: start small, think big.</div>
+  </section>
+
+  <footer class="foot wrap">
+    <div class="foot-links">
+      <a class="btn btn-primary" href="#/tower">&#9654; Live demo — Control Tower</a>
+      <a class="btn btn-ghost" href="#/track">Customer portal</a>
+    </div>
+    <p>Interactive prototype · all data simulated — <b>IT Consultant Challenge 2026, Round 1</b> ·
+      <span id="foot-team">Team TQT</span> · Netcompany × Code Mely</p>
+    <p class="foot-dim">PULSE · ORTEC · Optrack — Sweden Fulfillment Control Tower</p>
+  </footer>
+</section>
+
+<!-- ================= TOWER VIEW ================= -->
+<section id="view-tower" class="view" hidden>
+  <div id="tw-root"></div>
+</section>
+
+<!-- ================= CUSTOMER PORTAL VIEW ================= -->
+<section id="view-track" class="view" hidden>
+  <div id="track-root"></div>
+</section>
+</main>
+
+<!-- drawer + overlays -->
+<div id="tw-drawer-veil" hidden></div>
+<aside id="tw-drawer" hidden></aside>
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/tower.js"></script>
+<script src="js/customer.js"></script>
+</body>
+</html>
