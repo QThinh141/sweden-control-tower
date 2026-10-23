@@ -32,9 +32,10 @@ function applyLang(lang, opts = {}) {
   const sel = $('#lang-sel');
   if (sel) sel.value = State.lang;
   const d = $('#nav-demo-btn'), p = $('#nav-portal-btn');
-  if (d) d.textContent = '▶ ' + T('navDemo');
+  if (d) d.textContent = T('navDemo');
   if (p) p.textContent = T('navPortal');
   if (!opts.silent) {
+    if (State.view === 'home') Home.mount();
     if (State.view === 'tower') Tower.mount();
     if (State.view === 'track') { const id = State.tracked; Customer.mount(); if (id) Customer.open(id); }
   }
@@ -236,41 +237,11 @@ function closeDrawer() {
   State.selected = null;
 }
 
-/* ---------------------- Home page effects ----------------------------- */
-function animCount(el) {
-  const target = parseFloat(el.dataset.count);
-  const dec = el.dataset.dec ? 1 : 0;
-  const pre = el.dataset.prefix || '';
-  const suf = el.dataset.suffix || '';
-  let t0 = null; const dur = 1100;
-  function f(ts) {
-    if (!t0) t0 = ts;
-    const k = Math.min(1, (ts - t0) / dur);
-    const e = 1 - Math.pow(1 - k, 3);
-    el.textContent = pre + (target * e).toFixed(dec) + suf;
-    if (k < 1) requestAnimationFrame(f);
-  }
-  requestAnimationFrame(f);
-}
-
-function initHome() {
-  $('#team-name').textContent = CONFIG.teamName;
-  $('#foot-team').textContent = CONFIG.teamName;
-  $('#hero-map').innerHTML = svgSweden({ pilot: true });
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('on');
-      if (e.target.dataset.count !== undefined) animCount(e.target);
-      io.unobserve(e.target);
-    }
-  }), { threshold: 0.15 });
-  $$('.reveal, [data-count]').forEach(el => io.observe(el));
-}
-
 /* ---------------------- Router ---------------------------------------- */
 function setView(v) {
   State.view = v;
   ['home', 'tower', 'track'].forEach(x => { $('#view-' + x).hidden = x !== v; });
+  if (v === 'home') { Home.mount(); window.scrollTo({ top: 0 }); }
   if (v === 'tower') { Tower.mount(); window.scrollTo({ top: 0 }); }
   if (v === 'track') { Customer.mount(); window.scrollTo({ top: 0 }); }
 }
@@ -313,7 +284,6 @@ function boot() {
     sel.addEventListener('change', () => applyLang(sel.value));
   }
 
-  initHome();
   route();
   setInterval(tick, 4000);
   setInterval(() => {
