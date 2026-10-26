@@ -38,6 +38,14 @@ const Home = {
             ${quick.map(id => `<button data-open="${id}">${id}</button>`).join('')}
           </div>
         </div>
+
+        <div class="role-card">
+          <div class="rc-ico rc-mgmt">&#128202;</div>
+          <h3>${T('forMgmt')}</h3>
+          <p>${T('forMgmtSub')}</p>
+          <div class="mkt-mini">&#9679; ${T('mktMini')}</div>
+          <a class="btn btn-ghost" href="#/markets">${T('roBtn')}</a>
+        </div>
       </div>
 
       <footer class="land-foot">${T('footNote')}</footer>

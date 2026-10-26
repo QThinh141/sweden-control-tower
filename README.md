@@ -21,12 +21,13 @@ python -m http.server 8642 --directory .
 # then open http://localhost:8642
 ```
 
-## The product (2 workspaces)
+## The product (4 workspaces)
 
 | Workspace | What it does |
 |---|---|
-| **Landing (`#/`)** | Choose your workspace — dispatcher Control Tower or customer delivery tracker (with order-code lookup) |
+| **Landing (`#/`)** | Choose your workspace — dispatcher Control Tower, customer delivery tracker (order-code lookup), or management rollout status |
 | **Control Tower (`#/tower`)** | Dispatcher workspace — live risk dashboard with ETA re-scoring, ORTEC recommendations (probability + cost impact), one-click interventions, live map of Stockholm · Göteborg · Malmö, intervention feed, route load (Optrack) |
+| **Nordic Rollout (`#/markets`)** | The scale path as a product feature — live Nordic map (Sweden live, Norway Q2 2027, Denmark Q3 2027) + the 4-phase rollout plan with live stats pulled from the running system |
 | **Customer Portal (`#/track/SE-1042`)** | The SMS-link experience — no app, no login: live status, ETA, self-service re-booking, SMS thread |
 
 ## Languages 🌍
@@ -52,12 +53,13 @@ Your choice is remembered. System/event logs remain in English (back-office real
 ## Structure
 
 ```
-index.html      — app shell (landing + 2 workspaces)
+index.html      — app shell (landing + 3 workspaces)
 styles.css      — design system (light theme)
 js/data.js      — simulated data, STR i18n dictionary, recommendation engine
 js/core.js      — state, T() translation, simulation loop, Sweden map, router
 js/home.js      — landing page (workspace chooser + order lookup)
 js/tower.js     — Control Tower workspace
+js/markets.js   — Nordic rollout view (scale path as a product feature)
 js/customer.js  — Customer portal (SMS-link experience)
 ```
 

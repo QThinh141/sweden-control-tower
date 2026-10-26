@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A-Bolaget — Sweden Fulfillment Control Tower</title>
-<meta name="description" content="Sweden Fulfillment Control Tower — the delivery operations platform of A-Bolaget. Dispatcher control tower and customer delivery tracking for Stockholm, Göteborg and Malmö.">
+<meta name="description" content="Sweden Fulfillment Control Tower — the delivery operations platform of A-Bolaget. Dispatcher control tower, customer delivery tracking and Nordic rollout, for Stockholm, Göteborg and Malmö.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%BC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -28,6 +28,7 @@
         <option value="da">Dansk</option>
         <option value="no">Norsk</option>
       </select>
+      <a class="btn btn-ghost btn-sm" href="#/markets" id="nav-rollout-btn">Rollout</a>
       <a class="btn btn-ghost btn-sm" href="#/track" id="nav-portal-btn">Customer portal</a>
       <a class="btn btn-primary btn-sm" href="#/tower" id="nav-demo-btn">Control Tower</a>
     </div>
@@ -45,6 +46,11 @@
     <div id="tw-root"></div>
   </section>
 
+  <!-- ================= NORDIC ROLLOUT ================= -->
+  <section id="view-markets" class="view" hidden>
+    <div id="markets-root"></div>
+  </section>
+
   <!-- ================= CUSTOMER PORTAL ================= -->
   <section id="view-track" class="view" hidden>
     <div id="track-root"></div>
@@ -56,10 +62,11 @@
 <aside id="tw-drawer" hidden></aside>
 <div id="toast" class="toast" hidden></div>
 
-<script src="js/data.js"></script>
-<script src="js/core.js"></script>
-<script src="js/home.js"></script>
-<script src="js/tower.js"></script>
-<script src="js/customer.js"></script>
+<script src="js/data.js?v=4"></script>
+<script src="js/core.js?v=4"></script>
+<script src="js/home.js?v=4"></script>
+<script src="js/tower.js?v=4"></script>
+<script src="js/markets.js?v=4"></script>
+<script src="js/customer.js?v=4"></script>
 </body>
 </html>

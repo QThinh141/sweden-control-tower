@@ -31,12 +31,14 @@ function applyLang(lang, opts = {}) {
   try { localStorage.setItem('sct-lang', State.lang); } catch (e) { /* private mode */ }
   const sel = $('#lang-sel');
   if (sel) sel.value = State.lang;
-  const d = $('#nav-demo-btn'), p = $('#nav-portal-btn');
+  const d = $('#nav-demo-btn'), p = $('#nav-portal-btn'), r = $('#nav-rollout-btn');
   if (d) d.textContent = T('navDemo');
   if (p) p.textContent = T('navPortal');
+  if (r) r.textContent = T('navRollout');
   if (!opts.silent) {
     if (State.view === 'home') Home.mount();
     if (State.view === 'tower') Tower.mount();
+    if (State.view === 'markets') Markets.mount();
     if (State.view === 'track') { const id = State.tracked; Customer.mount(); if (id) Customer.open(id); }
   }
 }
@@ -216,6 +218,7 @@ function tick() {
 
   /* refresh the operational views */
   if (State.view === 'tower') Tower.update();
+  if (State.view === 'markets') Markets.update();
   if (State.view === 'track' && !State.draft) Customer.render();
 }
 
@@ -240,15 +243,17 @@ function closeDrawer() {
 /* ---------------------- Router ---------------------------------------- */
 function setView(v) {
   State.view = v;
-  ['home', 'tower', 'track'].forEach(x => { $('#view-' + x).hidden = x !== v; });
+  ['home', 'tower', 'track', 'markets'].forEach(x => { $('#view-' + x).hidden = x !== v; });
   if (v === 'home') { Home.mount(); window.scrollTo({ top: 0 }); }
   if (v === 'tower') { Tower.mount(); window.scrollTo({ top: 0 }); }
   if (v === 'track') { Customer.mount(); window.scrollTo({ top: 0 }); }
+  if (v === 'markets') { Markets.mount(); window.scrollTo({ top: 0 }); }
 }
 
 function route() {
   const h = location.hash || '';
   if (h.startsWith('#/tower')) { setView('tower'); return; }
+  if (h.startsWith('#/markets')) { setView('markets'); return; }
   if (h.startsWith('#/track')) {
     setView('track');
     const id = (h.split('/')[2] || '').toUpperCase();
